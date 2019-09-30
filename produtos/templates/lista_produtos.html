@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        {% for item in items.all %}
+            <a href="{% url 'produto' item.id %}">{{ item.nome }}</a>
+            <ul>
+                <li>{{ item.descricao }}</li>
+                <li>{{ item.preco }}</li>
+                {% if item.foto %}
+                <li><a href="{{ item.foto.url }}">{{ item.nome }}</a></li>
+                {% else %}
+                {% endif %}
+            </ul>
+        {% endfor %}
+    <a href="{% url 'novo_produto' %}">novo produto</a>
+    {% endblock %}

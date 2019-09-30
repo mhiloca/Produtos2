@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <h2>Tem certeza que deseja deletar {{ item.nome }}?</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">sim</button>
+        </form>
+        <form action="{% url 'lista_produtos' %}">
+            {% csrf_token %}
+            <button type="submit">não</button>
+        </form>
+    {% endblock %}

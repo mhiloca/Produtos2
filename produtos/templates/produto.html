@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <h1>{{ item.nome }}</h1>
+        <ul>
+            <li>{{ item.descricao }}</li>
+            <li>{{ item.preco }}</li>
+            {% if foto.item %}
+            <li><a href="{{ item.foto.url }}">{{ item.nome }}</a></li>
+            {% else %}
+            {% endif %}
+        </ul>
+        <a href="{% url 'update_produto' item.id %}">alterar produto</a>
+        <a href="{% url 'delete_produto' item.id %}">apagar produto</a>
+    {% endblock %}

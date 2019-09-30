@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        {% if item %}
+        <h1>{{ item.nome }}</h1>
+        {% else %}
+        <h1>novo produto</h1>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">salvar produto</button>
+        </form>
+
+    {% endblock %}

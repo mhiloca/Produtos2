@@ -13,3 +13,9 @@ Technologies used:
 
 For all the plugins and modules used, please refer to [requirements-dev](https://github.com/mhiloca/Produtos2/blob/master/requirements-dev.txt)
 and [requirements](https://github.com/mhiloca/Produtos2/blob/master/requirements.txt) files
+
+Click [here](https://produtos2.herokuapp.com) for project site
+
+login info:
+username: admin
+password: senhateste

@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 from decouple import config
 
-from dj_database_url import config as dburl_config
+from dj_database_url import parse as dburl
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -79,15 +79,10 @@ WSGI_APPLICATION = 'gestao_produtos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASE_URL= config('DATABASE_URL')
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 DATABASES = {
-    'default':
-        dburl_config(
-            default=DATABASE_URL,
-            conn_max_age=600,
-            ssl_require=True
-        ),
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
 

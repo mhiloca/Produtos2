@@ -5,8 +5,8 @@
         <ul>
             <li>{{ item.descricao }}</li>
             <li>{{ item.preco }}</li>
-            {% if foto.item %}
-            <li><a href="{{ item.foto.url }}">{{ item.nome }}</a></li>
+            {% if item.foto %}
+            <img src="{{ item.foto.url }}" class="img-fluid" alt="{{ item.nome }}">
             {% else %}
             {% endif %}
         </ul>
